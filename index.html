@@ -27,8 +27,14 @@
     // 🧠 Examples of usage:
     // processSingleLearner({ name: "Elisabeth", lovesJS: 1 }) // should return { name: "Elisabeth", lovesJS: true }
     // processSingleLearner({ name: "Pete", age: 23, lovesJS: 0 }) // should return { name: "Pete", age: 23, lovesJS: false }
-    const processSingleLearner = () => {
-
+    const processSingleLearner = (learner) => {
+      if (learner.lovesJS === 1) {
+        learner.lovesJS = true
+      } else if (learner.lovesJS === 0) {
+        learner.lovesJS = false
+      }
+      return learner
+      
     }
 
     // 👉 CHALLENGE 2
@@ -41,9 +47,18 @@
     // ❗ Notes:
     // 🧠 There are many approaches to this problem: using a loop, using forEach, using map...
     // 🧠 Solve this challenge using a for/in loop or a for loop.
-    const processLearnersLoop = () => {
+    const processLearnersLoop = (learners) => {
 
-    }
+      for (let i = 0; i < learners.length; i++) {
+        if (learners[i].lovesJS === 1) {
+          learners[i].lovesJS = true;
+        } else if (learners[i].lovesJS === 0) {
+          learners[i].lovesJS = false;
+        }
+      }
+
+    return learners;
+};
 
     // 👉 CHALLENGE 3
     // 🧠 The function processLearnerForEach takes an array of learner objects as its argument, and returns it after some modifications.
@@ -51,7 +66,17 @@
     // ❗ Notes:
     // 🧠 Solve this challenge using the forEach method of the learners array.
     // 🧠 Use arrow functions whenever possible.
-    const processLearnerForEach = () => {
+    const processLearnerForEach = (learners) => {
+
+      learners.forEach((learner) => {
+      if (learner.lovesJS === 1) {
+        learner.lovesJS = true;
+      } else if (learner.lovesJS === 0) {
+        learner.lovesJS = false;
+      }
+      });
+
+    return learners;
 
     }
 
